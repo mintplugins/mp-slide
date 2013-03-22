@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'mp_slide';
+  src: url("../fonts/mp-slide/mp_slide.eot?34571428");
+  src: url("../fonts/mp-slide/mp_slide.eot?34571428#iefix") format('embedded-opentype'), url("../fonts/mp-slide/mp_slide.woff?34571428") format('woff'), url("../fonts/mp-slide/mp_slide.ttf?34571428") format('truetype'), url("../fonts/mp-slide/mp_slide.svg?34571428#mp_slide") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'mp_slide';
+    src: url('../font/mp_slide.svg?34571428#mp_slide') format('svg');
+  }
+}
+*/
+.flex-prev:before,
+.flex-next:before,
+.flex-control-nav li a:before {
+  font-family: 'mp_slide';
+}
+
+
+/*For additional icon codes in the mp_slide font, see the fonts/mp-slide/demo/css/mp-slide.css file */
+.flex-prev:before { content: '\e800'; font-size:50px; } /* '' */
+.flex-next:before { content: '\e801'; font-size:50px; } /* '' */
+.flex-control-nav li a:before { content: '\25aa'; font-size:20px; } /* '▪' */
+
+/*Remove underline when hovered over */
+.flex-prev, .flex-prev:hover, .flex-next, .flex-next:hover, .flex-control-nav li a:hover{
+	text-decoration:none;
+}
