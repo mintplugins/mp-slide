@@ -29,5 +29,5 @@
 
 /*Remove underline when hovered over */
 .flex-prev, .flex-prev:hover, .flex-next, .flex-next:hover, .flex-control-nav li a:hover{
-	text-decoration:none;
+	text-decoration:none!important;
 }

@@ -17,17 +17,18 @@
 .flexslider a:focus  {outline: none;}
 .slides,
 .flex-control-nav,
-.flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+.flex-direction-nav {margin: 0!important; padding: 0!important; list-style: none!important;} 
+.flex-direction-nav li {margin: 0!important; padding: 0!important; list-style: none!important;} 
 
 /* FlexSlider Necessary Styles
 *********************************/ 
-.flexslider {margin: 0; padding: 0;}
-.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider {margin: 0!important; padding: 0!important;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden; margin:0px!important; padding:0px!important;} /* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides img {width: 100%; display: block;}
 .flex-pauseplay span {text-transform: capitalize;}
 
 /* Clearfix for the .slides element */
-.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0!important; height: 0;} 
 html[xmlns] .slides {display: block;} 
 * html .slides {height: 1%;}
 
@@ -49,16 +50,16 @@ html[xmlns] .slides {display: block;}
 
 /* Direction Nav */
 .flex-direction-nav {*height: 0;}
-.flex-direction-nav a {margin: -20px 0 0; display: block; position: absolute; top: 50%; z-index: 10; cursor: pointer; opacity: 0; -webkit-transition: all .3s ease;}
-.flex-direction-nav .flex-next {background-position: 100% 0; right: -36px; }
-.flex-direction-nav .flex-prev {left: -36px;}
+.flex-direction-nav a {margin: 0; display: block; position: absolute; top: 50%; z-index: 10; cursor: pointer; opacity: 0; -webkit-transition: all .3s ease;}
+.flex-direction-nav .flex-next {right: -36px; font:inherit!important; line-height:0!important;}
+.flex-direction-nav .flex-prev {left: -36px; font:inherit!important; line-height:0!important;}
 .flexslider:hover .flex-next {opacity: 0.8; right: 5px;}
 .flexslider:hover .flex-prev {opacity: 0.8; left: 5px;}
 .flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {opacity: 1;}
 
 /* Control Nav */
 .flex-control-paging {width: 100%; position: absolute; bottom: 0px; text-align: center; opacity:0; -webkit-transition: all .3s ease; }
-.flex-control-paging li {margin: 0 2px; display: inline-block; }
+.flex-control-paging li {margin: 0 2px!important; display: inline-block; }
 .flexslider:hover .flex-control-paging { bottom: 7px; opacity:.8;}
 
 .flex-control-paging li a {opacity: .8; -webkit-transition: all .5s ease; -moz-transition: all .5s ease; transition: all .5s ease;}
