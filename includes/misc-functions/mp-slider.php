@@ -103,28 +103,40 @@ function mp_slider($args){
 			
 			$html_output .= '<section id="slider_container_' . $args['slider_id'] . '" class="slider">';
 				//Show the Main Slider 
-				if (!empty($args['show_slider'])){
+				if ($args['show_slider'] == true){
 					$html_output .= '<div id="slider_' . $args['slider_id'] . '_' . $global_slider_num . '" class="flexslider">';
 						$html_output .= '<ul class="slides">';
 						while( $sliders->have_posts() ) : $sliders->the_post(); 
 							
-							//Get the video url for this slide
-							$video_url = get_post_meta( get_the_id(), 'mp_slide_video_url', true);
+							//Get the link url for this slide
+							$link_url = get_post_meta( get_the_id(), 'mp_slide_options_link_url', true);
 							
+							//Get the video url for this slide
+							$video_url = get_post_meta( get_the_id(), 'mp_slide_options_video_url', true);
+														
 							//If there is a video URL, show the video. We put a placeholder image behind the video so it resizes responsively and with aspect ratio
 							if ( !empty( $video_url ) ){
-								$html_output .= '<li><img class="ratio" src="' . plugins_url( 'css/images/16x9.gif', dirname(__FILE__)) . '"/>' . wp_oembed_get($video_url) . '</li>';
+								$html_output .= '<li>';
+								$html_output .= !empty( $link_url ) ?'<a href="' . $link_url . '">' : NULL;
+								$html_output .= '<img class="ratio" src="' . plugins_url( 'css/images/16x9.gif', dirname(__FILE__)) . '"/>' . wp_oembed_get($video_url);
+								$html_output .= !empty( $link_url ) ?'</a>' : NULL;
+								$html_output .= '</li>';
 							} 
 							//If there is no video URL, show the featured image instead
 							else {
-								$html_output .= '<li><img src="' . mp_the_featured_image(get_the_id(), $slide_width, $slide_height) . '" /></li>';
+								$html_output .= '<li>';
+								$html_output .= !empty( $link_url ) ?'<a href="' . $link_url . '">' : NULL;
+								$html_output .= '<img src="' . mp_the_featured_image(get_the_id(), $slide_width, $slide_height) . '" />';
+								$html_output .= !empty( $link_url ) ?'</a>' : NULL;
+								$html_output .= '</li>';
 							} 
+							
 						endwhile; 
 						$html_output .= '</ul>';
 					$html_output .= '</div>';
 				}
 				//Show the Carousel 
-				if (!empty($args['show_carousel'])){ 
+				if ($args['show_carousel'] == true){ 
 				
 					$html_output .= '<div id="carousel_' . $args['slider_id'] . '_' . $global_slider_num . '" class="flexslider">';
 						$html_output .= '<ul class="slides">';
@@ -158,28 +170,42 @@ function mp_slider($args){
 			
 			$html_output .= '<section id="slider_container_' . $args['slider_id'] . '" class="slider">';
 				//Show the Main Slider 
-				if (!empty($args['show_slider'])){
+				if ($args['show_slider'] == true){
 					$html_output .= '<div id="slider_' . $args['slider_id'] . '_' . $global_slider_num . '" class="flexslider">';
 						$html_output .= '<ul class="slides">';
 						
 						//Loop through each repeater
 						foreach($slides as $slide){
-																
+							
+							$html_output .= '<li>';
+							
+							//If there is a link, wrap this in an a tag
+							if ( !empty( $slide['mp_slide_link_url'] ) ){
+								$html_output .= '<a href="' . $slide['mp_slide_link_url'] . '">';
+							}
+															
 							//If there is a video URL, show the video. We put a placeholder image behind the video so it resizes responsively and with aspect ratio
 							if ( !empty( $slide['mp_slide_video_url'] ) ){
-								$html_output .= '<li><img class="ratio" src="' . plugins_url( 'css/images/16x9.gif', dirname(__FILE__)) . '"/>' . wp_oembed_get($slide['mp_slide_video_url']) . '</li>';
+								$html_output .= '<img class="ratio" src="' . plugins_url( 'css/images/16x9.gif', dirname(__FILE__)) . '"/>' . wp_oembed_get($slide['mp_slide_video_url']);
 							} 
 							//If there is no video URL, show the featured image instead
 							else {
-								$html_output .= '<li><img src="' . mp_aq_resize($slide['mp_slide_image_url'], $slide_width, $slide_height, true) . '" /></li>';
+								$html_output .= '<img src="' . mp_aq_resize($slide['mp_slide_image_url'], $slide_width, $slide_height, true) . '" />';
 							} 
+							
+							//If there is a link, finish wrapping this in an a tag
+							if ( !empty( $slide['mp_slide_link_url'] ) ){
+								$html_output .= '</a>';
+							}
+							
+							$html_output .= '</li>';
 							
 						}
 						$html_output .= '</ul>';
 					$html_output .= '</div>';
 				}
 				//Show the Carousel 
-				if (!empty($args['show_carousel'])){ 
+				if ($args['show_carousel'] == true){ 
 					$html_output .= '<div id="carousel_' . $args['slider_id'] . '_' . $global_slider_num . '" class="flexslider">';
 						$html_output .= '<ul class="slides">';
 							

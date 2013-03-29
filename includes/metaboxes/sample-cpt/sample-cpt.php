@@ -29,8 +29,15 @@ function mp_slide_sample_create_meta_box(){
 			'field_repeater' => 'mp_slider'
 		),
 		array(
+			'field_id'			=> 'mp_slide_link_url',
+			'field_title' 	=> __( 'Link URL (Optional)', 'mp_slide'),
+			'field_description' 	=> 'Enter the URL this image will go to when clicked.',
+			'field_type' 	=> 'url',
+			'field_repeater' => 'mp_slider'
+		),
+		array(
 			'field_id'			=> 'mp_slide_video_url',
-			'field_title' 	=> __( 'Video URL', 'mp_slide'),
+			'field_title' 	=> __( 'Video URL (Optional)', 'mp_slide'),
 			'field_description' 	=> 'Enter the URL to the video page.',
 			'field_type' 	=> 'url',
 			'field_repeater' => 'mp_slider'

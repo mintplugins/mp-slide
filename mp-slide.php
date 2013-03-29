@@ -139,9 +139,9 @@ function mp_slide_include_files(){
 		require( MP_SLIDE_PLUGIN_DIR . 'includes/metaboxes/mp-slide-instructions/mp-slide-instructions.php' );
 					
 		/**
-		 * Video metabox for mp_slide
+		 * Options metabox for mp_slide
 		 */
-		require( MP_SLIDE_PLUGIN_DIR . 'includes/metaboxes/mp-slide-video/mp-slide-video.php' );
+		require( MP_SLIDE_PLUGIN_DIR . 'includes/metaboxes/mp-slide-options/mp-slide-options.php' );
 		
 		/**
 		 * Sample metabox for cpt

@@ -88,8 +88,8 @@ class MP_SLIDE_Widget extends MP_CORE_Widget {
 			'post_type' => 'mp_slide', //options: NULL, 'post_slug'
 			'taxonomy' => 'mp_sliders', //options: NULL, 'tax_slug'
 			'taxonomy_group' => $instance['slide_cat'], //options: NULL, 'tax_group_slug'
-			'show_slider' => $instance['show_slider'], //options: NULL, 'anything' <-- This is controlled through a checkbox
-			'show_carousel' => $instance['show_carousel'], //options: NULL, 'anything' <-- This is controlled through a checkbox
+			'show_slider' => !empty($instance['show_slider']) ? true : false, //options: true, false <-- This is controlled through a checkbox
+			'show_carousel' => !empty($instance['show_carousel']) ? true : false, //options: true, false <-- This is controlled through a checkbox
 		);
 		
 			
