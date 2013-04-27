@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Move Plugins - Slide
+Plugin Name: MP Slide
 Plugin URI: http://moveplugins.com
 Description: Create sliders and display them with shortcodes, functions, or widgets
 Version: 1.0
-Author: Phil Johnston
+Author: Move Plugins
 Author URI: http://moveplugins.com
 Text Domain: mp_slide
 Domain Path: languages
@@ -75,7 +75,7 @@ function mp_slide_textdomain() {
 
 	// Setup paths to current locale file
 	$mofile_local  = $mp_slide_lang_dir . $mofile;
-	$mofile_global = WP_LANG_DIR . '/mp-stacks/' . $mofile;
+	$mofile_global = WP_LANG_DIR . '/mp-slide/' . $mofile;
 
 	if ( file_exists( $mofile_global ) ) {
 		// Look in global /wp-content/languages/mp-slide folder
@@ -117,6 +117,11 @@ function mp_slide_include_files(){
 	 * Otherwise, if mp_core is active, carry out the plugin's functions
 	 */
 	else{
+		
+		/**
+		 * Update script - keeps this plugin up to date
+		 */
+		require( MP_SLIDE_PLUGIN_DIR . 'includes/updater/mp-slide-update.php' );
 		
 		/**
 		 * Enqueue Scripts for mp_slide <-- this contains a javascript global variable called global_slider_num
