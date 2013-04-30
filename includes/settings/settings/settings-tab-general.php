@@ -14,8 +14,20 @@
 /**
 * Create new tab
 */
-$mp_slide_settings->mp_core_new_tab(__('Slider Settings' , 'my_plugin'), 'general');
+function mp_slide_settings_general_new_tab( $active_tab ){
+	
+	//Create array containing the title and slug for this new tab
+	$tab_info = array( 'title' => __('Slider Settings' , 'mp_slide'), 'slug' => 'general' );
+	
+	global $mp_slide_settings; $mp_slide_settings->new_tab( $active_tab, $tab_info );
+		
+}
+//Hook into the new tab hook filter contained in the settings class in the Move Plugins Core
+add_action('mp_slide_settings_new_tab_hook', 'mp_slide_settings_general_new_tab');
 
+/**
+* Create the options for this tab
+*/
 function mp_slide_settings_general_create(){
 	
 	//This variable must be the name of the variable that stores the class.
