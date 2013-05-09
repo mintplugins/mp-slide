@@ -101,7 +101,7 @@ function mp_slider($args){
 			echo '#slider_' . $args['slider_id'] . '_' . $global_slider_num . ' {max-height:' . $slide_height . 'px;}';
 			echo '</style>';
 			
-			$html_output .= '<section id="slider_container_' . $args['slider_id'] . '" class="slider">';
+			$html_output .= '<div id="slider_container_' . $args['slider_id'] . '" class="slider">';
 				//Show the Main Slider 
 				if ($args['show_slider'] == true){
 					$html_output .= '<div id="slider_' . $args['slider_id'] . '_' . $global_slider_num . '" class="flexslider">';
@@ -126,7 +126,7 @@ function mp_slider($args){
 							else {
 								$html_output .= '<li>';
 								$html_output .= !empty( $link_url ) ?'<a href="' . $link_url . '">' : NULL;
-								$html_output .= '<img src="' . mp_the_featured_image(get_the_id(), $slide_width, $slide_height) . '" />';
+								$html_output .= '<img src="' . mp_core_the_featured_image(get_the_id(), $slide_width, $slide_height) . '" />';
 								$html_output .= !empty( $link_url ) ?'</a>' : NULL;
 								$html_output .= '</li>';
 							} 
@@ -141,13 +141,13 @@ function mp_slider($args){
 					$html_output .= '<div id="carousel_' . $args['slider_id'] . '_' . $global_slider_num . '" class="flexslider">';
 						$html_output .= '<ul class="slides">';
 							while( $sliders->have_posts() ) : $sliders->the_post(); 
-								$html_output .= '<li><img src="' . mp_the_featured_image(get_the_id(), $carousel_width, $carousel_height) . '" width="' . $carousel_width . 'px" height="' . $carousel_height . 'px" /></li>';
+								$html_output .= '<li><img src="' . mp_core_the_featured_image(get_the_id(), $carousel_width, $carousel_height) . '" width="' . $carousel_width . 'px" height="' . $carousel_height . 'px" /></li>';
 							endwhile;
 						$html_output .= '</ul>';
 					$html_output .= '</div>';
 				
 				}
-			$html_output .= '</section>';
+			$html_output .= '</div>';
 		endif; 
 	} //Endif (source == taxonomy)
 	

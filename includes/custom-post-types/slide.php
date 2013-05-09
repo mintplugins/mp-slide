@@ -47,7 +47,7 @@ function mp_slide_post_type() {
 		register_post_type( 'mp_slide', apply_filters( 'mp_slide_slide_post_type_args', $slide_args ) );
 	}
 }
-add_action( 'init', 'mp_slide_post_type', 100 );
+add_action( 'init', 'mp_slide_post_type', 0 );
  
  /**
  * Slider Cat taxonomy

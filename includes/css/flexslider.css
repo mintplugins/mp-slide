@@ -20,11 +20,16 @@
 .flex-direction-nav {margin: 0!important; padding: 0!important; list-style: none!important;} 
 .flex-direction-nav li {margin: 0!important; padding: 0!important; list-style: none!important;} 
 
+/*Slider Container*/
+.slider{
+	overflow:hidden;
+}
+
 /* FlexSlider Necessary Styles
 *********************************/ 
 .flexslider {margin: 0!important; padding: 0!important;}
 .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden; margin:0px!important; padding:0px!important;} /* Hide the slides before the JS is loaded. Avoids image jumping */
-.flexslider .slides img {width: 100%; display: block;}
+.flexslider .slides img {width: 100%; display: block; position:relative;}
 .flex-pauseplay span {text-transform: capitalize;}
 
 /* Clearfix for the .slides element */
@@ -41,7 +46,7 @@ html[xmlns] .slides {display: block;}
 /* FlexSlider Default Theme
 *********************************/
 .flexslider {margin: 0 0 0px; position: relative;}
-.flex-viewport {max-height: 2000px;}
+
 .loading .flex-viewport {max-height: 300px;}
 .flexslider .slides {zoom: 1;}
 

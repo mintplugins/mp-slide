@@ -17,7 +17,7 @@ function mp_slider_show_insert_shortcode(){
 				'option_title' => 'Slider',
 				'option_description' => 'Choose a slider',
 				'option_type' => 'select',
-				'option_value' => mp_core_get_all_tax('mp_sliders'),
+				'option_value' => mp_core_get_all_posts_by_tax('mp_sliders'),
 			),
 			array(
 				'option_id' => 'showslider',
@@ -73,35 +73,31 @@ function mp_slide_display_slider( $atts ) {
 	
 	//Check if this post has slider meta
 	$slider_meta_check = get_post_meta( $post_id, 'mp_slider', true);
-	
-	//This post does have slider meta
-	if ( !empty( $slider_meta_check ) ){
-		
-		//See if the string '-post' is found in the source var
-		$type_post = explode('-', $vars['source'] );
-					
-		//The user has selected to use the slider meta info for the current post
-		if ( !empty( $type_post[1] ) ) {
-			$args = array(
-				'source' => 'post', // options: 'post', 'taxonomy' Future add-ons: 'instagram', 'facebook', 'twitter', 'tumblr'
-				'slider_id' => $type_post[0], // options: post_id, NULL, custom_id 
-				'show_slider' => $vars['showslider'] == 'true' ? true : false, //options: true, false <-- This is controlled through a checkbox
-				'show_carousel' => $vars['showcarousel'] == 'true' ? true : false, //options: true, false <-- This is controlled through a checkbox
-			);
-		}
-		else{
-			$args = array(
-				'source' => 'taxonomy', // options: 'post', 'taxonomy' Future add-ons: 'instagram', 'facebook', 'twitter', 'tumblr'
-				'slider_id' => $post_id . '_' . $vars['source'], // options: post_id, NULL, custom_id 
-				'post_type' => 'mp_slide', //options: NULL, 'post_slug'
-				'taxonomy' => 'mp_sliders', //options: NULL, 'tax_slug'
-				'taxonomy_group' => $vars['source'], //options: NULL, 'tax_group_slug'
-				'show_slider' => $vars['showslider'] == 'true' ? true : false, //options: true, false <-- This is controlled through a checkbox
-				'show_carousel' => $vars['showcarousel'] == 'true' ? true : false, //options: true, false <-- This is controlled through a checkbox
-			);	
-		}
-		
+			
+	//See if the string '-post' is found in the source var. If it does, that means the 'source' is a post, not a taxonomy of the mp_slide post type
+	$type_post = explode('-', $vars['source'] );
+				
+	//The user has selected to use the slider meta info for the current post
+	if ( !empty( $type_post[1] ) ) {
+		$args = array(
+			'source' => 'post', // options: 'post', 'taxonomy' Future add-ons: 'instagram', 'facebook', 'twitter', 'tumblr'
+			'slider_id' => $type_post[0], // options: post_id, NULL, custom_id 
+			'show_slider' => $vars['showslider'] == 'true' ? true : false, //options: true, false <-- This is controlled through a checkbox
+			'show_carousel' => $vars['showcarousel'] == 'true' ? true : false, //options: true, false <-- This is controlled through a checkbox
+		);
 	}
+	else{
+		$args = array(
+			'source' => 'taxonomy', // options: 'post', 'taxonomy' Future add-ons: 'instagram', 'facebook', 'twitter', 'tumblr'
+			'slider_id' => $post_id . '_' . $vars['source'], // options: post_id, NULL, custom_id 
+			'post_type' => 'mp_slide', //options: NULL, 'post_slug'
+			'taxonomy' => 'mp_sliders', //options: NULL, 'tax_slug'
+			'taxonomy_group' => $vars['source'], //options: NULL, 'tax_group_slug'
+			'show_slider' => $vars['showslider'] == 'true' ? true : false, //options: true, false <-- This is controlled through a checkbox
+			'show_carousel' => $vars['showcarousel'] == 'true' ? true : false, //options: true, false <-- This is controlled through a checkbox
+		);	
+	}
+	
 	
 	if ( !empty( $args ) ){
 		return mp_slider( $args );

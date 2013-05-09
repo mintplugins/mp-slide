@@ -105,7 +105,7 @@ function mp_slide_include_files(){
 		/**
 		 * Include Plugin Checker
 		 */
-		require( MP_SLIDE_PLUGIN_DIR . 'includes/plugin-checker/plugin-checker.php' );
+		require( MP_SLIDE_PLUGIN_DIR . 'includes/plugin-checker/class-plugin-checker.php' );
 		
 		/**
 		 * Check if mp_core in installed
