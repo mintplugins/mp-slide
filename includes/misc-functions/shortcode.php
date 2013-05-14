@@ -17,7 +17,7 @@ function mp_slider_show_insert_shortcode(){
 				'option_title' => 'Slider',
 				'option_description' => 'Choose a slider',
 				'option_type' => 'select',
-				'option_value' => mp_core_get_all_posts_by_tax('mp_sliders'),
+				'option_value' => mp_core_get_all_terms_by_tax('mp_sliders'),
 			),
 			array(
 				'option_id' => 'showslider',

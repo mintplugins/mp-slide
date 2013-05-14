@@ -29,7 +29,7 @@ class MP_SLIDE_Widget extends MP_CORE_Widget {
 				'field_title' 	=> __('Select the slider to use:', 'mp_slide'),
 				'field_description' 	=> NULL,
 				'field_type' 	=> 'select',
-				'field_select_values' => mp_core_get_all_posts_by_tax('mp_sliders'),
+				'field_select_values' => mp_core_get_all_terms_by_tax('mp_sliders'),
 			),
 			"field3" => array(
 				'field_id' 			=> 'show_slider',
