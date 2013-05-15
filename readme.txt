@@ -1,41 +1,43 @@
-=== Move Plugins Core ===
+=== MP Slide ===
 Contributors: johnstonphilip
 Donate link: http://moveplugins.com/
-Tags: message bar, header
-Requires at least: 3.0.1
-Tested up to: 3.5
-Stable tag: 4.3
+Tags: slider, responsive
+Requires at least: 3.3
+Tested up to: 3.6
+Stable tag: 1.0.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin gives developers access to a core set of classes for creating Settings, Metaboxes, Widgets, Plugins and more.
+This plugin allows you to create responsive sliders that contain images or videos displayed via widgets or shortcodes.
 
 == Description ==
 
-This plugin gives developers access to a core set of classes for creating Settings, Metaboxes, Widgets, Plugins and more.
+This plugin allows you to create responsive sliders that contain images or videos displayed via widgets or shortcodes.
 
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-1. Upload the 'message-bar' folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Go to Settings > Message Bar and fill out the options. 
+Full instructions and FAQ available at:
+http://moveplugins.com/doc/mp-slide/
 
 == Frequently Asked Questions ==
 
-= What do I do with this?  =
-
-After you install, make sure to fill out all options under the Settings > Message Bar panel in the WordPress admin area.
+Full instructions and FAQ available at:
+http://moveplugins.com/doc/mp-slide/
 
 == Screenshots ==
 
-1. This is a screenshot of the Message Bar in action.
+1. The setup page for a new Slide.
 
-2. This is a screenshot of the Message Bar option.
+2. The set up page for a new Slider
+
+3. Slider Widget
+
+4. Slider shortcode
+
+5. Sample slider display
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.0.0 =
 * Original release
