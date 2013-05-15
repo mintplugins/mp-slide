@@ -8,7 +8,7 @@ function mp_slider_show_insert_shortcode(){
 	$post_id = isset($_GET['post']) ? $_GET['post'] : NULL;
 	
 	$args = array(
-		'shortcode_id' => 'slider',
+		'shortcode_id' => 'mp_slider',
 		'shortcode_title' => __('Slider', 'mp_core'),
 		'shortcode_description' => __( 'Use the form below to insert the shortcode for a Slider ', 'mp_core' ),
 		'shortcode_options' => array(
@@ -104,7 +104,7 @@ function mp_slide_display_slider( $atts ) {
 	}
 	
 }
-add_shortcode( 'slider', 'mp_slide_display_slider' );
+add_shortcode( 'mp_slider', 'mp_slide_display_slider' );
 
 /**
  * Shortcode slider width

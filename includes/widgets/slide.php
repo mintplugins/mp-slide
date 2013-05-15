@@ -10,7 +10,7 @@ class MP_SLIDE_Widget extends MP_CORE_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'mp_slide_widget', // Base ID
-			'Slider', // Name
+			'MP Slider', // Name
 			array( 'description' => __( 'Display slider.', 'mp_slide' ), ) // Args
 		);
 		
