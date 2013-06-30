@@ -41,7 +41,7 @@ function mp_slide_post_type() {
 			'rewrite' 			=> array( 'slug' => 'slider' ),
 			'capability_type' 	=> 'post',
 			'has_archive' 		=> true, 
-			'hierarchical' 		=> false,
+			'hierarchical' 		=> true,
 			'supports' 			=> apply_filters('mp_slide_slide_supports', array( 'title', 'thumbnail' ) ),
 		); 
 		register_post_type( 'mp_slide', apply_filters( 'mp_slide_slide_post_type_args', $slide_args ) );
