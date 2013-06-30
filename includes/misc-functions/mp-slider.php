@@ -78,6 +78,8 @@ function mp_slider($args){
 		$slide_args = array(
 			'post_type' => $args['post_type'],
 			'posts_per_page' => 0,
+			'orderby' => 'menu_order',
+			'order' => 'ASC',
 			'tax_query' => array(
 				'relation' => 'AND',
 				array(
