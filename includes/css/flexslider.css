@@ -29,7 +29,7 @@
 *********************************/ 
 .flexslider {margin: 0!important; padding: 0!important;}
 .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden; margin:0px!important; padding:0px!important;} /* Hide the slides before the JS is loaded. Avoids image jumping */
-.flexslider .slides img {width: 100%; display: block; position:relative;}
+.flexslider .slides img {width: 100%; display: block; position:relative; margin: 0px!important; padding:0px!important; box-shadow:none!important; }
 .flex-pauseplay span {text-transform: capitalize;}
 
 /* Clearfix for the .slides element */
