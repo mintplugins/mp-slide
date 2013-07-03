@@ -84,7 +84,7 @@ function mp_slide_taxonomy() {
 		);  
 	}
 }  
-add_action( 'init', 'mp_slide_taxonomy' );  
+add_action( 'after_setup_theme', 'mp_slide_taxonomy' );  
 
 /**
  * Change default title
