@@ -38,6 +38,11 @@ http://moveplugins.com/doc/mp-slide/
 5. Sample slider display
 
 == Changelog ==
+= 1.0.0.5 = July 2, 2013
+Changed action hook for taxonomy from text_domain to init
+
+= 1.0.0.4 = July 2, 2013
+Added styling to flexslider.css for images to have no border or margin
 
 = 1.0.0.1 = May 17, 2013
 * Changed updates and plugin check from moveplugins.com to repo.moveplugins.com

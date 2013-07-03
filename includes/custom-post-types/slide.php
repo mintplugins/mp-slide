@@ -84,7 +84,7 @@ function mp_slide_taxonomy() {
 		);  
 	}
 }  
-add_action( 'load_textdomain', 'mp_slide_taxonomy' );  
+add_action( 'init', 'mp_slide_taxonomy' );  
 
 /**
  * Change default title
