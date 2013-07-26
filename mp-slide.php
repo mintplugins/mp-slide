@@ -3,7 +3,7 @@
 Plugin Name: MP Slide
 Plugin URI: http://moveplugins.com
 Description: Create sliders and display them with shortcodes, functions, or widgets
-Version: 1.0.0.6
+Version: 1.0.0.7
 Author: Move Plugins
 Author URI: http://moveplugins.com
 Text Domain: mp_slide
@@ -105,7 +105,12 @@ function mp_slide_include_files(){
 		/**
 		 * Include Plugin Checker
 		 */
-		require( MP_SLIDE_PLUGIN_DIR . 'includes/plugin-checker/class-plugin-checker.php' );
+		require( MP_SLIDE_PLUGIN_DIR . '/includes/plugin-checker/class-plugin-checker.php' );
+		
+		/**
+		 * Include Plugin Installer
+		 */
+		require( MP_SLIDE_PLUGIN_DIR . '/includes/plugin-checker/class-plugin-installer.php' );
 		
 		/**
 		 * Check if mp_core in installed

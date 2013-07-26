@@ -4,7 +4,7 @@ Donate link: http://moveplugins.com/
 Tags: slider, responsive
 Requires at least: 3.3
 Tested up to: 3.6
-Stable tag: 1.0.0.6
+Stable tag: 1.0.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,9 @@ http://moveplugins.com/doc/mp-slide/
 5. Sample slider display
 
 == Changelog ==
+
+= 1.0.0.7 = July 26, 2013
+*plugin-checker/plugin-installer classes change
 
 = 1.0.0.6 = July 2, 2013
 Changed action hook for taxonomy from init to after_setup_theme
