@@ -3,7 +3,7 @@
 Plugin Name: MP Slide
 Plugin URI: http://moveplugins.com
 Description: Create sliders and display them with shortcodes, functions, or widgets
-Version: 1.0.0.8
+Version: 1.0.0.9
 Author: Move Plugins
 Author URI: http://moveplugins.com
 Text Domain: mp_slide
@@ -152,11 +152,6 @@ function mp_slide_include_files(){
 		 * Options metabox for mp_slide
 		 */
 		require( MP_SLIDE_PLUGIN_DIR . 'includes/metaboxes/mp-slide-options/mp-slide-options.php' );
-		
-		/**
-		 * Sample metabox for cpt
-		 */
-		require( MP_SLIDE_PLUGIN_DIR . 'includes/metaboxes/sample-cpt/sample-cpt.php' );
 		
 		/**
 		 * Slide Custom Post Type

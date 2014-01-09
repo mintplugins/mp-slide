@@ -39,6 +39,9 @@ http://moveplugins.com/doc/mp-slide/
 
 == Changelog ==
 
+= 1.0.0.9: January 9, 2014 =
+Removed Sample Metabox (download slideshow). But left files for now because they are unique for CPT short code sliders showing a slider attached to that specific post.
+
 = 1.0.0.8: September 27, 2013 =
 * Change: Plugin Checker/Installer/Updater class and function updates. 
 * Change: API URL change to repo.moveplugins.com -> moveplugins.com.
